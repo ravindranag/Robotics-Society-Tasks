@@ -86,7 +86,8 @@ def score_update(score, unique, correct):
 
 def game():
     # game function
-    target = convert_to_list(str(generate()))
+    num = str(generate())
+    target = convert_to_list(num)
     score = 0
     final = 0   # the score once all 4 digits are guessed
     won = False
@@ -119,6 +120,8 @@ def game():
                 print(position[0], 'in the correct position.')
             else:
                 print(position[1], 'in the wrong position.')
+    if not won:
+        print('You lost :(\nCorrect answer was', num)
     ch = str(input('Play Again? (y/n) '))
     if ch == 'y':
         return True
